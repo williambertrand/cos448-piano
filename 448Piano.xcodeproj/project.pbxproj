@@ -15,6 +15,11 @@
 		3D42B7F81C9A58E5006C8444 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D42B7F61C9A58E5006C8444 /* LaunchScreen.storyboard */; };
 		3D42B8031C9A58E6006C8444 /* _48PianoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D42B8021C9A58E6006C8444 /* _48PianoTests.swift */; };
 		3D42B80E1C9A58E6006C8444 /* _48PianoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D42B80D1C9A58E6006C8444 /* _48PianoUITests.swift */; };
+		3D5EF0141CAB306000A03D4F /* HolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EF0131CAB306000A03D4F /* HolderView.swift */; };
+		3D5EF0171CAB314400A03D4F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EF0161CAB314400A03D4F /* Colors.swift */; };
+		3D5EF01A1CAB316D00A03D4F /* RectangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EF0191CAB316D00A03D4F /* RectangleLayer.swift */; };
+		3D5EF01C1CAB31C300A03D4F /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EF01B1CAB31C300A03D4F /* LaunchViewController.swift */; };
+		3D5EF01E1CAB491900A03D4F /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EF01D1CAB491900A03D4F /* Dashboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		3D42B8091C9A58E6006C8444 /* 448PianoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 448PianoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D42B80D1C9A58E6006C8444 /* _48PianoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _48PianoUITests.swift; sourceTree = "<group>"; };
 		3D42B80F1C9A58E6006C8444 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D5EF0131CAB306000A03D4F /* HolderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolderView.swift; sourceTree = "<group>"; };
+		3D5EF0161CAB314400A03D4F /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		3D5EF0191CAB316D00A03D4F /* RectangleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleLayer.swift; sourceTree = "<group>"; };
+		3D5EF01B1CAB31C300A03D4F /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		3D5EF01D1CAB491900A03D4F /* Dashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +111,13 @@
 			children = (
 				3D42B7EA1C9A58E5006C8444 /* AppDelegate.swift */,
 				3D42B7EC1C9A58E5006C8444 /* ViewController.swift */,
+				3D5EF01B1CAB31C300A03D4F /* LaunchViewController.swift */,
+				3D5EF01D1CAB491900A03D4F /* Dashboard.swift */,
 				3D42B7EE1C9A58E5006C8444 /* Main.storyboard */,
+				3D5EF0151CAB306C00A03D4F /* Loading Screen */,
 				3D42B7F41C9A58E5006C8444 /* Assets.xcassets */,
 				3D42B7F61C9A58E5006C8444 /* LaunchScreen.storyboard */,
+				3D5EF0181CAB314F00A03D4F /* Utilities */,
 				3D42B7F91C9A58E5006C8444 /* Info.plist */,
 				3D42B7F11C9A58E5006C8444 /* _48Piano.xcdatamodeld */,
 			);
@@ -126,6 +140,23 @@
 				3D42B80F1C9A58E6006C8444 /* Info.plist */,
 			);
 			path = 448PianoUITests;
+			sourceTree = "<group>";
+		};
+		3D5EF0151CAB306C00A03D4F /* Loading Screen */ = {
+			isa = PBXGroup;
+			children = (
+				3D5EF0131CAB306000A03D4F /* HolderView.swift */,
+				3D5EF0191CAB316D00A03D4F /* RectangleLayer.swift */,
+			);
+			name = "Loading Screen";
+			sourceTree = "<group>";
+		};
+		3D5EF0181CAB314F00A03D4F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3D5EF0161CAB314400A03D4F /* Colors.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +293,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D5EF0141CAB306000A03D4F /* HolderView.swift in Sources */,
+				3D5EF0171CAB314400A03D4F /* Colors.swift in Sources */,
+				3D5EF01E1CAB491900A03D4F /* Dashboard.swift in Sources */,
 				3D42B7F31C9A58E5006C8444 /* _48Piano.xcdatamodeld in Sources */,
 				3D42B7ED1C9A58E5006C8444 /* ViewController.swift in Sources */,
 				3D42B7EB1C9A58E5006C8444 /* AppDelegate.swift in Sources */,
+				3D5EF01C1CAB31C300A03D4F /* LaunchViewController.swift in Sources */,
+				3D5EF01A1CAB316D00A03D4F /* RectangleLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +527,7 @@
 				3D42B8141C9A58E6006C8444 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3D42B8151C9A58E6006C8444 /* Build configuration list for PBXNativeTarget "448PianoTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +536,7 @@
 				3D42B8171C9A58E6006C8444 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3D42B8181C9A58E6006C8444 /* Build configuration list for PBXNativeTarget "448PianoUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +545,7 @@
 				3D42B81A1C9A58E6006C8444 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
