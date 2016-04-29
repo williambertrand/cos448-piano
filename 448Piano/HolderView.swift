@@ -34,9 +34,9 @@ class HolderView: UIView {
         secondRectangle = UIView(frame: CGRect(x: frame.width * offset + 14, y: frame.height + 5, width: 10, height: 40))
         thirdRectangle = UIView(frame: CGRect(x: frame.width * offset + 28, y: frame.height, width: 10, height: 40))
         
-        firstRectangle.backgroundColor = UIColor.blackColor()
-        secondRectangle.backgroundColor = UIColor.blackColor()
-        thirdRectangle.backgroundColor = UIColor.blackColor()
+        firstRectangle.backgroundColor = LINE_COLOR_RB2
+        secondRectangle.backgroundColor = LINE_COLOR_RB2
+        thirdRectangle.backgroundColor = LINE_COLOR_RB2
         self.addSubview(firstRectangle)
         self.addSubview(secondRectangle)
         self.addSubview(thirdRectangle)

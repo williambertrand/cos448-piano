@@ -55,7 +55,12 @@ class LaunchViewController: UIViewController, HolderViewDelegate {
     }
     
     func showNextScreen(){
-        self.performSegueWithIdentifier("showNextScreen", sender: self)
+//        self.performSegueWithIdentifier("showNextScreen", sender: self)
+        
+        
+//        if teacher account
+        self.performSegueWithIdentifier("toTeacherDashBoard", sender: self)
+        
     }
     
 }//

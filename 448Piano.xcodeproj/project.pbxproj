@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03FDB582621306505CC650DA /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCE67F0D1DD4DBEAF023C88 /* Pods.framework */; };
 		3D42B7EB1C9A58E5006C8444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D42B7EA1C9A58E5006C8444 /* AppDelegate.swift */; };
 		3D42B7ED1C9A58E5006C8444 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D42B7EC1C9A58E5006C8444 /* ViewController.swift */; };
 		3D42B7F01C9A58E5006C8444 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D42B7EE1C9A58E5006C8444 /* Main.storyboard */; };
@@ -20,6 +21,32 @@
 		3D5EF01A1CAB316D00A03D4F /* RectangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EF0191CAB316D00A03D4F /* RectangleLayer.swift */; };
 		3D5EF01C1CAB31C300A03D4F /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EF01B1CAB31C300A03D4F /* LaunchViewController.swift */; };
 		3D5EF01E1CAB491900A03D4F /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EF01D1CAB491900A03D4F /* Dashboard.swift */; };
+		3D69333B1CC82BDF007D8969 /* TeacherDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D69333A1CC82BDF007D8969 /* TeacherDashboardViewController.swift */; };
+		3D9CB6601CCF3FFA00A27DA1 /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9CB65F1CCF3FFA00A27DA1 /* Segues.swift */; };
+		3D9CB6621CD08D8100A27DA1 /* LogInSignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9CB6611CD08D8100A27DA1 /* LogInSignUpScreen.swift */; };
+		3D9CB6661CD2822000A27DA1 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9CB6651CD2822000A27DA1 /* Task.swift */; };
+		3D9CB6691CD285C500A27DA1 /* TeacherTaskCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9CB6681CD285C500A27DA1 /* TeacherTaskCreationViewController.swift */; };
+		3DA936111CD3B6F600D0C9B4 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA936101CD3B6F600D0C9B4 /* TaskTableViewCell.swift */; };
+		3DAD09531CC94509005F83A5 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD09521CC94509005F83A5 /* TopBar.swift */; };
+		3DAD09581CC9A565005F83A5 /* FirebaseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD09571CC9A565005F83A5 /* FirebaseConstants.swift */; };
+		3DAD095E1CC9AB47005F83A5 /* UserConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD095D1CC9AB47005F83A5 /* UserConstants.swift */; };
+		3DAD09601CC9BD73005F83A5 /* TeacherViewStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD095F1CC9BD73005F83A5 /* TeacherViewStudentViewController.swift */; };
+		3DAD09631CC9DD1C005F83A5 /* Misc_constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD09621CC9DD1C005F83A5 /* Misc_constants.swift */; };
+		3DAD09671CCA6A62005F83A5 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD09661CCA6A62005F83A5 /* TestViewController.swift */; };
+		3DAD09691CCA6E48005F83A5 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD09681CCA6E48005F83A5 /* SideMenuViewController.swift */; };
+		3DAD096B1CCAA7AD005F83A5 /* StudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD096A1CCAA7AD005F83A5 /* StudentsViewController.swift */; };
+		3DAD096D1CCB6EB7005F83A5 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD096C1CCB6EB7005F83A5 /* ChatViewController.swift */; };
+		3DAD09701CCB6F0B005F83A5 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD096F1CCB6F0B005F83A5 /* MessageCell.swift */; };
+		3DAD09721CCB6F31005F83A5 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD09711CCB6F31005F83A5 /* Message.swift */; };
+		3DDC72DB1CD3014900FFE333 /* AutoCompleteTextField in Resources */ = {isa = PBXBuildFile; fileRef = 3DDC72DA1CD3014900FFE333 /* AutoCompleteTextField */; };
+		3DDC72DD1CD301DE00FFE333 /* AutoCompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDC72DC1CD301DE00FFE333 /* AutoCompleteTextField.swift */; };
+		3DDC72DF1CD3A63500FFE333 /* TeacherAllTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDC72DE1CD3A63500FFE333 /* TeacherAllTasksViewController.swift */; };
+		3DFA37611CCD1D5900BA9EA7 /* ChatThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFA37601CCD1D5900BA9EA7 /* ChatThreadViewController.swift */; };
+		3DFA37631CCD29CB00BA9EA7 /* ChatThreadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFA37621CCD29CB00BA9EA7 /* ChatThreadTableViewCell.swift */; };
+		3DFA37651CCD9A0300BA9EA7 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFA37641CCD9A0300BA9EA7 /* Thread.swift */; };
+		904BA43041D4F5ADBF5AB2EC /* Pods_448PianoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B5FF334F806C4BEC6EDF693 /* Pods_448PianoUITests.framework */; };
+		9244236591F52E86D19CD4D9 /* Pods_448Piano.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93DAE4F0CD6DDC3683D48749 /* Pods_448Piano.framework */; };
+		98ADF87838AE26665DADD6F2 /* Pods_448PianoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7E7C5DB0450A896615D4460 /* Pods_448PianoTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +67,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B5FF334F806C4BEC6EDF693 /* Pods_448PianoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_448PianoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F4925C1EEE13CD343A66D31 /* Pods-448PianoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-448PianoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-448PianoUITests/Pods-448PianoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3D42B7E71C9A58E5006C8444 /* 448Piano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 448Piano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D42B7EA1C9A58E5006C8444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D42B7EC1C9A58E5006C8444 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +88,38 @@
 		3D5EF0191CAB316D00A03D4F /* RectangleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleLayer.swift; sourceTree = "<group>"; };
 		3D5EF01B1CAB31C300A03D4F /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		3D5EF01D1CAB491900A03D4F /* Dashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		3D69333A1CC82BDF007D8969 /* TeacherDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherDashboardViewController.swift; sourceTree = "<group>"; };
+		3D9CB65F1CCF3FFA00A27DA1 /* Segues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
+		3D9CB6611CD08D8100A27DA1 /* LogInSignUpScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInSignUpScreen.swift; sourceTree = "<group>"; };
+		3D9CB6651CD2822000A27DA1 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		3D9CB6681CD285C500A27DA1 /* TeacherTaskCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherTaskCreationViewController.swift; sourceTree = "<group>"; };
+		3DA936101CD3B6F600D0C9B4 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		3DAD09521CC94509005F83A5 /* TopBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
+		3DAD09571CC9A565005F83A5 /* FirebaseConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseConstants.swift; sourceTree = "<group>"; };
+		3DAD095D1CC9AB47005F83A5 /* UserConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserConstants.swift; sourceTree = "<group>"; };
+		3DAD095F1CC9BD73005F83A5 /* TeacherViewStudentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherViewStudentViewController.swift; sourceTree = "<group>"; };
+		3DAD09621CC9DD1C005F83A5 /* Misc_constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc_constants.swift; sourceTree = "<group>"; };
+		3DAD09661CCA6A62005F83A5 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		3DAD09681CCA6E48005F83A5 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		3DAD096A1CCAA7AD005F83A5 /* StudentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentsViewController.swift; sourceTree = "<group>"; };
+		3DAD096C1CCB6EB7005F83A5 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		3DAD096F1CCB6F0B005F83A5 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		3DAD09711CCB6F31005F83A5 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		3DAD09741CCB761A005F83A5 /* 448Piano-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "448Piano-Bridging-Header.h"; sourceTree = "<group>"; };
+		3DDC72DA1CD3014900FFE333 /* AutoCompleteTextField */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AutoCompleteTextField; path = ../AutoCompleteTextField; sourceTree = "<group>"; };
+		3DDC72DC1CD301DE00FFE333 /* AutoCompleteTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextField.swift; sourceTree = "<group>"; };
+		3DDC72DE1CD3A63500FFE333 /* TeacherAllTasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherAllTasksViewController.swift; sourceTree = "<group>"; };
+		3DFA37601CCD1D5900BA9EA7 /* ChatThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatThreadViewController.swift; sourceTree = "<group>"; };
+		3DFA37621CCD29CB00BA9EA7 /* ChatThreadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatThreadTableViewCell.swift; sourceTree = "<group>"; };
+		3DFA37641CCD9A0300BA9EA7 /* Thread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
+		3FCE67F0D1DD4DBEAF023C88 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48F87A296A3A3352800E6103 /* Pods-448PianoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-448PianoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-448PianoTests/Pods-448PianoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		67248FE20375FBFB42C5C849 /* Pods-448Piano.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-448Piano.debug.xcconfig"; path = "Pods/Target Support Files/Pods-448Piano/Pods-448Piano.debug.xcconfig"; sourceTree = "<group>"; };
+		87EAD64E099791FB732365BE /* Pods-448Piano.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-448Piano.release.xcconfig"; path = "Pods/Target Support Files/Pods-448Piano/Pods-448Piano.release.xcconfig"; sourceTree = "<group>"; };
+		936887A674E4A752093372B3 /* Pods-448PianoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-448PianoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-448PianoTests/Pods-448PianoTests.release.xcconfig"; sourceTree = "<group>"; };
+		93DAE4F0CD6DDC3683D48749 /* Pods_448Piano.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_448Piano.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7E7C5DB0450A896615D4460 /* Pods_448PianoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_448PianoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9153D7686F1E7FBEDB70746 /* Pods-448PianoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-448PianoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-448PianoUITests/Pods-448PianoUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +127,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9244236591F52E86D19CD4D9 /* Pods_448Piano.framework in Frameworks */,
+				03FDB582621306505CC650DA /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98ADF87838AE26665DADD6F2 /* Pods_448PianoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				904BA43041D4F5ADBF5AB2EC /* Pods_448PianoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +158,8 @@
 				3D42B8011C9A58E6006C8444 /* 448PianoTests */,
 				3D42B80C1C9A58E6006C8444 /* 448PianoUITests */,
 				3D42B7E81C9A58E5006C8444 /* Products */,
+				6AAE7859A81C025C92C8336B /* Pods */,
+				CE25AC93B7BA366A92170D2E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,11 +176,19 @@
 		3D42B7E91C9A58E5006C8444 /* 448Piano */ = {
 			isa = PBXGroup;
 			children = (
+				3DDC72DA1CD3014900FFE333 /* AutoCompleteTextField */,
 				3D42B7EA1C9A58E5006C8444 /* AppDelegate.swift */,
-				3D42B7EC1C9A58E5006C8444 /* ViewController.swift */,
+				3D9CB6671CD285A700A27DA1 /* Task Stuff */,
+				3D9CB6641CD2816E00A27DA1 /* Container VC */,
+				3DAD096A1CCAA7AD005F83A5 /* StudentsViewController.swift */,
+				3D9CB6631CD192CF00A27DA1 /* Menu */,
 				3D5EF01B1CAB31C300A03D4F /* LaunchViewController.swift */,
 				3D5EF01D1CAB491900A03D4F /* Dashboard.swift */,
+				3DAD09741CCB761A005F83A5 /* 448Piano-Bridging-Header.h */,
+				3DAD09611CC9BD7F005F83A5 /* TeacherViews */,
 				3D42B7EE1C9A58E5006C8444 /* Main.storyboard */,
+				3DAD096E1CCB6EE6005F83A5 /* Chat */,
+				3DAD09661CCA6A62005F83A5 /* TestViewController.swift */,
 				3D5EF0151CAB306C00A03D4F /* Loading Screen */,
 				3D42B7F41C9A58E5006C8444 /* Assets.xcassets */,
 				3D42B7F61C9A58E5006C8444 /* LaunchScreen.storyboard */,
@@ -147,6 +222,7 @@
 			children = (
 				3D5EF0131CAB306000A03D4F /* HolderView.swift */,
 				3D5EF0191CAB316D00A03D4F /* RectangleLayer.swift */,
+				3D9CB6611CD08D8100A27DA1 /* LogInSignUpScreen.swift */,
 			);
 			name = "Loading Screen";
 			sourceTree = "<group>";
@@ -155,8 +231,87 @@
 			isa = PBXGroup;
 			children = (
 				3D5EF0161CAB314400A03D4F /* Colors.swift */,
+				3DAD09571CC9A565005F83A5 /* FirebaseConstants.swift */,
+				3DAD095D1CC9AB47005F83A5 /* UserConstants.swift */,
+				3DAD09621CC9DD1C005F83A5 /* Misc_constants.swift */,
+				3D9CB65F1CCF3FFA00A27DA1 /* Segues.swift */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		3D9CB6631CD192CF00A27DA1 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				3DAD09521CC94509005F83A5 /* TopBar.swift */,
+				3DAD09681CCA6E48005F83A5 /* SideMenuViewController.swift */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		3D9CB6641CD2816E00A27DA1 /* Container VC */ = {
+			isa = PBXGroup;
+			children = (
+				3D42B7EC1C9A58E5006C8444 /* ViewController.swift */,
+			);
+			name = "Container VC";
+			sourceTree = "<group>";
+		};
+		3D9CB6671CD285A700A27DA1 /* Task Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				3DDC72DC1CD301DE00FFE333 /* AutoCompleteTextField.swift */,
+				3D9CB6651CD2822000A27DA1 /* Task.swift */,
+				3D9CB6681CD285C500A27DA1 /* TeacherTaskCreationViewController.swift */,
+				3DDC72DE1CD3A63500FFE333 /* TeacherAllTasksViewController.swift */,
+				3DA936101CD3B6F600D0C9B4 /* TaskTableViewCell.swift */,
+			);
+			name = "Task Stuff";
+			sourceTree = "<group>";
+		};
+		3DAD09611CC9BD7F005F83A5 /* TeacherViews */ = {
+			isa = PBXGroup;
+			children = (
+				3DAD095F1CC9BD73005F83A5 /* TeacherViewStudentViewController.swift */,
+				3D69333A1CC82BDF007D8969 /* TeacherDashboardViewController.swift */,
+			);
+			name = TeacherViews;
+			sourceTree = "<group>";
+		};
+		3DAD096E1CCB6EE6005F83A5 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				3DAD096C1CCB6EB7005F83A5 /* ChatViewController.swift */,
+				3DFA37601CCD1D5900BA9EA7 /* ChatThreadViewController.swift */,
+				3DFA37621CCD29CB00BA9EA7 /* ChatThreadTableViewCell.swift */,
+				3DAD096F1CCB6F0B005F83A5 /* MessageCell.swift */,
+				3DAD09711CCB6F31005F83A5 /* Message.swift */,
+				3DFA37641CCD9A0300BA9EA7 /* Thread.swift */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
+		6AAE7859A81C025C92C8336B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				67248FE20375FBFB42C5C849 /* Pods-448Piano.debug.xcconfig */,
+				87EAD64E099791FB732365BE /* Pods-448Piano.release.xcconfig */,
+				48F87A296A3A3352800E6103 /* Pods-448PianoTests.debug.xcconfig */,
+				936887A674E4A752093372B3 /* Pods-448PianoTests.release.xcconfig */,
+				1F4925C1EEE13CD343A66D31 /* Pods-448PianoUITests.debug.xcconfig */,
+				F9153D7686F1E7FBEDB70746 /* Pods-448PianoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CE25AC93B7BA366A92170D2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93DAE4F0CD6DDC3683D48749 /* Pods_448Piano.framework */,
+				C7E7C5DB0450A896615D4460 /* Pods_448PianoTests.framework */,
+				1B5FF334F806C4BEC6EDF693 /* Pods_448PianoUITests.framework */,
+				3FCE67F0D1DD4DBEAF023C88 /* Pods.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,9 +321,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D42B8121C9A58E6006C8444 /* Build configuration list for PBXNativeTarget "448Piano" */;
 			buildPhases = (
+				301019C6F29A0956B8534EE1 /* Check Pods Manifest.lock */,
+				536D44E2735003F680EEE922 /* 📦 Check Pods Manifest.lock */,
 				3D42B7E31C9A58E5006C8444 /* Sources */,
 				3D42B7E41C9A58E5006C8444 /* Frameworks */,
 				3D42B7E51C9A58E5006C8444 /* Resources */,
+				98285E5D0C18DA049DA0915B /* 📦 Embed Pods Frameworks */,
+				E71C80706D007F6667C4BD8A /* 📦 Copy Pods Resources */,
+				8BEE2405596EBAF73048884D /* Embed Pods Frameworks */,
+				6CD2ECCA0CEBDFB4D91B955A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -183,9 +344,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D42B8151C9A58E6006C8444 /* Build configuration list for PBXNativeTarget "448PianoTests" */;
 			buildPhases = (
+				9AE8067FA8843677F878DE01 /* 📦 Check Pods Manifest.lock */,
 				3D42B7FA1C9A58E6006C8444 /* Sources */,
 				3D42B7FB1C9A58E6006C8444 /* Frameworks */,
 				3D42B7FC1C9A58E6006C8444 /* Resources */,
+				0EDBC94AFD096532CD92841C /* 📦 Embed Pods Frameworks */,
+				14213958218690B94BF17F43 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -201,9 +365,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D42B8181C9A58E6006C8444 /* Build configuration list for PBXNativeTarget "448PianoUITests" */;
 			buildPhases = (
+				115CFFA4F0F27357DCD75D8D /* 📦 Check Pods Manifest.lock */,
 				3D42B8051C9A58E6006C8444 /* Sources */,
 				3D42B8061C9A58E6006C8444 /* Frameworks */,
 				3D42B8071C9A58E6006C8444 /* Resources */,
+				3CB6DB1A40167E9379AED665 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -266,6 +432,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DDC72DB1CD3014900FFE333 /* AutoCompleteTextField in Resources */,
 				3D42B7F81C9A58E5006C8444 /* LaunchScreen.storyboard in Resources */,
 				3D42B7F51C9A58E5006C8444 /* Assets.xcassets in Resources */,
 				3D42B7F01C9A58E5006C8444 /* Main.storyboard in Resources */,
@@ -288,18 +455,208 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0EDBC94AFD096532CD92841C /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-448PianoTests/Pods-448PianoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		115CFFA4F0F27357DCD75D8D /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		14213958218690B94BF17F43 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-448PianoTests/Pods-448PianoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		301019C6F29A0956B8534EE1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3CB6DB1A40167E9379AED665 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-448PianoUITests/Pods-448PianoUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		536D44E2735003F680EEE922 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6CD2ECCA0CEBDFB4D91B955A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8BEE2405596EBAF73048884D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98285E5D0C18DA049DA0915B /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-448Piano/Pods-448Piano-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9AE8067FA8843677F878DE01 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E71C80706D007F6667C4BD8A /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-448Piano/Pods-448Piano-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3D42B7E31C9A58E5006C8444 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3D5EF0141CAB306000A03D4F /* HolderView.swift in Sources */,
+				3DFA37631CCD29CB00BA9EA7 /* ChatThreadTableViewCell.swift in Sources */,
+				3DA936111CD3B6F600D0C9B4 /* TaskTableViewCell.swift in Sources */,
 				3D5EF0171CAB314400A03D4F /* Colors.swift in Sources */,
+				3DAD09671CCA6A62005F83A5 /* TestViewController.swift in Sources */,
 				3D5EF01E1CAB491900A03D4F /* Dashboard.swift in Sources */,
 				3D42B7F31C9A58E5006C8444 /* _48Piano.xcdatamodeld in Sources */,
+				3D9CB6691CD285C500A27DA1 /* TeacherTaskCreationViewController.swift in Sources */,
+				3DAD09601CC9BD73005F83A5 /* TeacherViewStudentViewController.swift in Sources */,
 				3D42B7ED1C9A58E5006C8444 /* ViewController.swift in Sources */,
+				3DDC72DD1CD301DE00FFE333 /* AutoCompleteTextField.swift in Sources */,
+				3D9CB6661CD2822000A27DA1 /* Task.swift in Sources */,
 				3D42B7EB1C9A58E5006C8444 /* AppDelegate.swift in Sources */,
+				3DDC72DF1CD3A63500FFE333 /* TeacherAllTasksViewController.swift in Sources */,
+				3D9CB6621CD08D8100A27DA1 /* LogInSignUpScreen.swift in Sources */,
+				3DAD095E1CC9AB47005F83A5 /* UserConstants.swift in Sources */,
+				3DAD096B1CCAA7AD005F83A5 /* StudentsViewController.swift in Sources */,
+				3DAD09701CCB6F0B005F83A5 /* MessageCell.swift in Sources */,
 				3D5EF01C1CAB31C300A03D4F /* LaunchViewController.swift in Sources */,
+				3DFA37611CCD1D5900BA9EA7 /* ChatThreadViewController.swift in Sources */,
+				3DAD09691CCA6E48005F83A5 /* SideMenuViewController.swift in Sources */,
+				3DAD09631CC9DD1C005F83A5 /* Misc_constants.swift in Sources */,
+				3DAD09531CC94509005F83A5 /* TopBar.swift in Sources */,
+				3D69333B1CC82BDF007D8969 /* TeacherDashboardViewController.swift in Sources */,
+				3DAD09581CC9A565005F83A5 /* FirebaseConstants.swift in Sources */,
+				3D9CB6601CCF3FFA00A27DA1 /* Segues.swift in Sources */,
+				3DAD09721CCB6F31005F83A5 /* Message.swift in Sources */,
+				3DFA37651CCD9A0300BA9EA7 /* Thread.swift in Sources */,
+				3DAD096D1CCB6EB7005F83A5 /* ChatViewController.swift in Sources */,
 				3D5EF01A1CAB316D00A03D4F /* RectangleLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,28 +797,35 @@
 		};
 		3D42B8131C9A58E6006C8444 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67248FE20375FBFB42C5C849 /* Pods-448Piano.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = 448Piano/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "William.-48Piano";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/William/Documents/Projects/Cos448Piano/448Piano/448Piano/448Piano-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		3D42B8141C9A58E6006C8444 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87EAD64E099791FB732365BE /* Pods-448Piano.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = 448Piano/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "William.-48Piano";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/William/Documents/Projects/Cos448Piano/448Piano/448Piano/448Piano-Bridging-Header.h";
 			};
 			name = Release;
 		};
 		3D42B8161C9A58E6006C8444 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48F87A296A3A3352800E6103 /* Pods-448PianoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = 448PianoTests/Info.plist;
@@ -474,6 +838,7 @@
 		};
 		3D42B8171C9A58E6006C8444 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 936887A674E4A752093372B3 /* Pods-448PianoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = 448PianoTests/Info.plist;
@@ -486,6 +851,7 @@
 		};
 		3D42B8191C9A58E6006C8444 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F4925C1EEE13CD343A66D31 /* Pods-448PianoUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = 448PianoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -498,6 +864,7 @@
 		};
 		3D42B81A1C9A58E6006C8444 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9153D7686F1E7FBEDB70746 /* Pods-448PianoUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = 448PianoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

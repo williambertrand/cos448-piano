@@ -8,15 +8,60 @@
 
 import UIKit
 import CoreData
+import Firebase
+
+
+extension UIStoryboard {
+    enum Storyboard : String {
+        case Main
+        case LaunchScreen
+    }
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var holderViewController : ViewController!
+    
+    let ref = Firebase(url: "https://limba.firebaseio.com")
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        ref.observeAuthEventWithBlock({ authData in
+            if authData != nil {
+                // user authenticated
+                print(authData)
+            } else {
+                // No user is signed in
+                
+            }
+        })
+        
+        
+        
+        //make the view controller
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        holderViewController = storyboard.instantiateViewControllerWithIdentifier("ViewControllerHolder") as! ViewController
+        let loginController = storyboard.instantiateViewControllerWithIdentifier("ViewControllerStart") as!LogInSignUpScreen
+        
+        holderViewController.appNavigationController = UINavigationController(rootViewController: loginController);
+        holderViewController.appNavigationController.setNavigationBarHidden(true, animated: false)
+        holderViewController.view.addSubview(holderViewController.appNavigationController.view)
+        
+        holderViewController.menuBar = TopBar(frame: CGRect(x: 0, y: 0, width: holderViewController.view.frame.width, height: holderViewController.view.frame.height * 0.08))
+        holderViewController.view.addSubview(holderViewController.menuBar)
+        holderViewController.menuBar.delegate = holderViewController;
+        holderViewController.menuBar.hidden = true
+        
+        loginController.delegate = holderViewController
+        self.window?.rootViewController = holderViewController;
+        
+        holderViewController.appNavigationController.setViewControllers([loginController], animated: false)
+        
         return true
     }
 
