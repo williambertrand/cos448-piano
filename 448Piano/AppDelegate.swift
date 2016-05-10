@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
-        //make the view controller
+//        make the view controller
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         holderViewController = storyboard.instantiateViewControllerWithIdentifier("ViewControllerHolder") as! ViewController
@@ -51,17 +51,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         holderViewController.appNavigationController = UINavigationController(rootViewController: loginController);
         holderViewController.appNavigationController.setNavigationBarHidden(true, animated: false)
         holderViewController.view.addSubview(holderViewController.appNavigationController.view)
-        
+
         holderViewController.menuBar = TopBar(frame: CGRect(x: 0, y: 0, width: holderViewController.view.frame.width, height: holderViewController.view.frame.height * 0.08))
         holderViewController.view.addSubview(holderViewController.menuBar)
         holderViewController.menuBar.delegate = holderViewController;
         holderViewController.menuBar.hidden = true
-        
+
         loginController.delegate = holderViewController
         self.window?.rootViewController = holderViewController;
-        
+
         holderViewController.appNavigationController.setViewControllers([loginController], animated: false)
-        
         return true
     }
 

@@ -13,12 +13,14 @@ class Thread : NSObject {
     var recentDate_ : NSDate
     var recentText_ : String
     var receiverID_ : String
+    var receiverName_ : String
     
-    init(threadID: String, receiverID: String, text: String) {
+    init(threadID: String, receiverID: String, receiverName : String, text: String) {
         self.recentDate_ = NSDate()
         self.recentText_ = text
         self.threadID_ = threadID
         self.receiverID_ = receiverID
+        self.receiverName_ = receiverName
     }
     
     func threadID() -> String! {
@@ -27,6 +29,10 @@ class Thread : NSObject {
     
     func receiverID() -> String! {
         return receiverID_;
+    }
+    
+    func receiverName() -> String{
+        return receiverName_
     }
     
     func recentDate() -> NSDate! {

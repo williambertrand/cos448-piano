@@ -11,7 +11,7 @@ import UIKit
 import Firebase
 
 
-class TeacherTaskCreationViewController: UIViewController {
+class TeacherTaskCreationViewController: UIViewController,UITextFieldDelegate {
     
     var newTaskLabel : UILabel!
     
@@ -23,6 +23,8 @@ class TeacherTaskCreationViewController: UIViewController {
     
     var dueDateEntry : UIDatePicker!
     
+    var delegate : ChatDelegate!
+    
     var dueByNextWeekButton : UIButton!
     var dueByNextTwoWeeksButton : UIButton!
     var DUE_IN_WEEK : Bool = false
@@ -33,7 +35,7 @@ class TeacherTaskCreationViewController: UIViewController {
     var cancelButton : UIButton!
     
     //asd
-    var ID_DICT = NSDictionary(dictionary: ["Danny Lass": "dlass","Mary Chen":"mchen","Katie Hanss":"khans","student1":"student1","test student":"student1"])
+    var ID_DICT = NSDictionary(dictionary: ["Danny Lass": "dlass","Mary Chen":"mchen","student1":"student1","test student":"student1","Gus":"faf75bf6-eab4-49cd-9c5f-095f4a77d7ba", "Katie Hanss":"0a60c32f-471c-4064-8cbf-51f11f469202"])
     
     //calendar
     var gregCal = NSCalendar.init(calendarIdentifier: NSGregorianCalendar)
@@ -54,7 +56,6 @@ class TeacherTaskCreationViewController: UIViewController {
         newTaskLabel.textAlignment = .Center
         self.view.addSubview(newTaskLabel)
         
-        
         receiverAutoCompleteEntry.autoCompleteTextColor = UIColor(red: 128.0/255.0, green: 128.0/255.0, blue: 128.0/255.0, alpha: 1.0)
         receiverAutoCompleteEntry.autoCompleteTextFont = UIFont(name: "HelveticaNeue-Light", size: 12.0)!
         receiverAutoCompleteEntry.autoCompleteCellHeight = 35.0
@@ -69,7 +70,7 @@ class TeacherTaskCreationViewController: UIViewController {
         receiverAutoCompleteEntry.placeholder = "Student Name"
         
         receiverAutoCompleteEntry.onTextChange = {[weak self] text in
-            self!.receiverAutoCompleteEntry.autoCompleteStrings = ["Mary Chen", "Danny Lass", "Michelle Pfiefer", "Meryl Streep", "David Bowie"]
+            self!.receiverAutoCompleteEntry.autoCompleteStrings = ["Mary Chen","Katie Hanss", "Danny Lass", "Meryl Streep", "David Bowie","Gus"]
         }
         
         
@@ -85,6 +86,7 @@ class TeacherTaskCreationViewController: UIViewController {
         //description
         descriptionEntry = UITextField(frame: CGRect(x: x_inset, y: height * 0.35, width: width, height: height * 0.05))
         descriptionEntry.placeholder = "More Info"
+        descriptionEntry.delegate = self
         self.view.addSubview(descriptionEntry)
         
         
@@ -137,6 +139,16 @@ class TeacherTaskCreationViewController: UIViewController {
         cancelButton.layer.backgroundColor = CANCEL_COLOR_ORG.CGColor
         self.view.addSubview(cancelButton)
         
+    }
+    
+    func returnToChat(){
+        print (self.delegate)
+        self.delegate.returnToChat()
+    }
+    
+    func dismessSelf(){
+        self.receiverEntry = nil
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     
@@ -206,13 +218,13 @@ class TeacherTaskCreationViewController: UIViewController {
     }
     
     func dateInTwoWeeksFrom(date:NSDate) -> NSDate{
-        let days = 7.0
+        let days = 14.0
         let newDate = date.dateByAddingTimeInterval(60 * 60 * 24 * days)
         return newDate
     }
     
     func dateInOneWeekFrom(date:NSDate)-> NSDate{
-        let days = 14.0
+        let days = 7.0
         let newDate = date.dateByAddingTimeInterval(60 * 60 * 24 * days)
         return newDate
     }
@@ -225,7 +237,7 @@ class TeacherTaskCreationViewController: UIViewController {
         let tasksRefSender = Firebase(url: "https://limba.firebaseio.com/tasks/" + CURRENT_USER_ID)
         let tasksRefRec = Firebase(url: ("https://limba.firebaseio.com/tasks/" + String(userIDFromName(receiverAutoCompleteEntry.text!))))
         var taskObj : Dictionary<String,String>!
-        taskObj = ["title":titleEntry.text!,"description":descriptionEntry.text!,"senderID":CURRENT_USER_ID, "senderDisplayName":CURRENT_USER_NAME,"receriverID":receiverAutoCompleteEntry.text!,"receiverDisplayName":receiverAutoCompleteEntry.text!,"AssignedDate": String(task_date.timeIntervalSince1970),"dueDate":String(dueDateEntry.date.timeIntervalSince1970)]
+        taskObj = ["title":titleEntry.text!,"description":descriptionEntry.text!,"senderID":CURRENT_USER_ID, "senderDisplayName":CURRENT_USER_NAME,"receiverID":receiverAutoCompleteEntry.text!,"receiverDisplayName":receiverAutoCompleteEntry.text!,"AssignedDate": String(task_date.timeIntervalSince1970),"dueDate":String(dueDateEntry.date.timeIntervalSince1970), "status":"open"]
         
         let taskRefSend = tasksRefSender.childByAutoId()
         taskRefSend.setValue(taskObj)
@@ -241,6 +253,10 @@ class TeacherTaskCreationViewController: UIViewController {
             self.presentViewController(ac, animated: true, completion: { () -> Void in
                 //do nothing on completeion
                 self.clearTaskFields()
+                
+                if DID_COME_FROM_CHAT {
+//                    self.delegate.returnToChat()
+                }
             })
         }
         
@@ -268,6 +284,12 @@ class TeacherTaskCreationViewController: UIViewController {
         dueDateEntry.date = NSDate()
         descriptionEntry.text = ""
         receiverAutoCompleteEntry.text = ""
+    }
+    
+    func textFieldShouldReturn(textField: UITextField!) -> Bool // called when 'return' key pressed. return NO to ignore.
+    {
+        textField.resignFirstResponder()
+        return true;
     }
     
 }

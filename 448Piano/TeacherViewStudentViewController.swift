@@ -151,7 +151,6 @@ class TeacherViewStudentViewController : UIViewController, UITableViewDelegate, 
         
         return cell
 
-        
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {

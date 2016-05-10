@@ -19,15 +19,25 @@ protocol ChatDelegate {
     func returnToDash()
     func showMenuBar()
     func chatView() -> (ChatViewController!)
+    func taskSenderView() ->(TeacherTaskCreationViewController!)
+    func goToTaskCreation()
+    func returnToChat()
+    func goToPlayView()
+    func showTaskSummary()
 }
-class ChatViewController: JSQMessagesViewController{
+
+class ChatViewController: JSQMessagesViewController, UIImagePickerControllerDelegate{
     let SEG_FROM_CHAT = "ChatViewBackToThreads"
     
     var dateFormatter = NSDateFormatter()
     
     // *** STEP 1: STORE FIREBASE REFERENCES
     var messagesRef: Firebase!
-    var messages : [Message] = [Message]()
+    var messages : [JSQMessage]?
+    
+    var photoItems : [JSQPhotoMediaItem]?
+    
+    var taskItems : [JSQPhotoMediaItem]?
     var sender : String! //TODO - this is the current user
     var avatars = Dictionary<String, JSQMessagesAvatarImage>()
     
@@ -36,6 +46,9 @@ class ChatViewController: JSQMessagesViewController{
     
     var incomingBubble : JSQMessagesBubbleImage!
     var outgoingBubble : JSQMessagesBubbleImage!
+    
+    var incomingAvatar: JSQMessagesAvatarImage!
+    var outgoingAvatar: JSQMessagesAvatarImage!
     
     var senderImageUrl: String!
     
@@ -48,25 +61,26 @@ class ChatViewController: JSQMessagesViewController{
     func setupFirebase() {
         // *** STEP 2: SETUP FIREBASE
         messagesRef = Firebase(url: "https://limba.firebaseio.com/messages")
-    
-        
         
         self.messagesRef.queryOrderedByChild("thread").queryEqualToValue(SELECTED_THREAD_ID).observeEventType(.ChildAdded, withBlock: { snapshot in
-            print("xxxxxxxxxxxxxxx")
-            print(snapshot.value);
-            print("xxxxxxxxxxxxxxx")
+            
             let value : Dictionary <String, AnyObject> = snapshot.value as! Dictionary <String, AnyObject>
             let text = value["text"] as? String
             let sender = value["sender"] as? String
             let imageUrl = value["imageUrl"] as? String
-            let message = Message(senderId: sender!, senderDisplayName: sender!, isMediaMessage: false, hash: 10, text: text!, imageUrl: imageUrl!)
-            self.messages.append(message)
-            self.finishReceivingMessage()
+            let senderDisplayName = value["sender"] as? String     //TODO ADD DISPLAY NAME
+//            let message = Message(senderId: sender!, senderDisplayName: sender!, isMediaMessage: false, hash: 10, text: text!, imageUrl: imageUrl!)
+            
+            let message = JSQMessage(senderId: sender, displayName: senderDisplayName, text: text)
+//            self.messages.append
+            self.messages?.append(message)
+//            self.finishReceivingMessage()
+            self.finishReceivingMessageAnimated(true)
             
         })
         
-        print("selected:",SELECTED_THREAD_ID)
-        print ("len should be 2:",self.messages.count)
+//        print("selected:",SELECTED_THREAD_ID)
+//        print ("len should be 2:",self.messages.count)
         
         
 //        messagesRef.queryLimitedToFirst(25).observeEventType(.ChildAdded, withBlock: { (snapshot) in
@@ -134,9 +148,12 @@ class ChatViewController: JSQMessagesViewController{
         self.navigationController?.navigationBarHidden = true
         if delegate != nil {
         }
-        
-        self.delegate.transitionToChatThreadPage()
-        
+        if CURRENT_USSER_IS_TEACHER{
+            self.delegate.transitionToChatThreadPage()
+        }
+        else {
+            self.delegate.returnToDash()
+        }
         //performSegueWithIdentifier(SEG_FROM_CHAT, sender: self)
         //self.delegate.exitChat()
     }
@@ -148,9 +165,17 @@ class ChatViewController: JSQMessagesViewController{
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
         
+        let bubbleFactory = JSQMessagesBubbleImageFactory()
+        self.incomingBubble = bubbleFactory.incomingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleLightGrayColor())
+        self.outgoingBubble = bubbleFactory.outgoingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleGreenColor())
+        
+        self.incomingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "profile")!, diameter: 64)
+        self.outgoingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "profile")!, diameter: 64)
+        
+        
         self.collectionView.frame = CGRect(x: 0, y: self.view.frame.height * 0.2, width: self.view.frame.width, height: self.view.frame.height * 0.9)
         // Do any additional setup after loading the view, typically from a nib.
-        inputToolbar.contentView.leftBarButtonItem = nil
+//        inputToolbar.contentView.leftBarButtonItem = nil
         automaticallyScrollsToMostRecentMessage = true
         navigationController?.navigationBar.topItem?.title = "Logout"
 //        let backButton = UIButton(frame:CGRect(x: self.view.frame.width * 0.5, y: self.view.frame.height * 0.05, width: self.view.frame.width * 0.15, height: self.view.frame.height * 0.025))
@@ -173,8 +198,10 @@ class ChatViewController: JSQMessagesViewController{
             setupAvatarColor(sender, incoming: false)
             senderImageUrl = ""
         }
-        self.incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(CHAT_GRAY_COLOR)
-        self.outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(LINE_COLOR_RB2)
+        
+        
+        self.messages = []
+        
         setupFirebase()
     }
     
@@ -201,109 +228,169 @@ class ChatViewController: JSQMessagesViewController{
     
     //MARK JSQ MESSAGE COLLECTION VIEW SECTION ------------------------------------------------------------------------
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageData! {
-        return self.messages[indexPath.item]
+        return self.messages?[indexPath.item]
     }
     
     
-    
-//    func collectionView(collectionView: JSQMessagesCollectionView!, bubbleImageViewForItemAtIndexPath indexPath: NSIndexPath!) -> UIImageView! {
-//        let message = messages[indexPath.item]
-//        
-//        if message.senderId() == sender {
-//            return UIImageView(image: outgoingBubble.messageBubbleImage, highlightedImage: outgoingBubble.messageBubbleHighlightedImage)
-//        }
-//        
-//        return UIImageView(image: incomingBubble.messageBubbleImage, highlightedImage: incomingBubble.messageBubbleHighlightedImage)
-//    }
-    
-    
-    func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageViewForItemAtIndexPath indexPath: NSIndexPath!) -> UIImageView! {
-        let message = messages[indexPath.item]
+    func collectionView(collectionView: JSQMessagesCollectionView!, bubbleImageViewForItemAtIndexPath indexPath: NSIndexPath!) -> UIImageView! {
+        let message = messages?[indexPath.item]
         
-        if let avatar = avatars[message.senderId()] {
-            return UIImageView(image: avatar.avatarImage)
-        } else {
-            setupAvatarImage(message.senderId(), imageUrl: message.imageUrl(), incoming: true)
-            return UIImageView(image:avatars[message.senderId()]?.avatarImage)
+        if message!.senderId == sender {
+            return UIImageView(image: outgoingBubble.messageBubbleImage, highlightedImage: outgoingBubble.messageBubbleHighlightedImage)
         }
         
+        return UIImageView(image: incomingBubble.messageBubbleImage, highlightedImage: incomingBubble.messageBubbleHighlightedImage)
+    }
+    
+    
+    override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource! {
+        return nil
+        let message = self.messages?[indexPath.item]
+        if message?.senderId == self.senderId {
+            return self.outgoingAvatar
+        }
+        return self.incomingAvatar
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return messages.count
+        return (messages?.count)!
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = super.collectionView(collectionView, cellForItemAtIndexPath: indexPath) as! JSQMessagesCollectionViewCell
         
-        let message = messages[indexPath.item]
-//        if message.senderId() == sender {
-//            cell.textView.textColor = UIColor.whiteColor()
-//        } else {
-//            cell.textView.textColor = UIColor.blackColor()
-//        }
+        let message = messages?[indexPath.item]
+        if message!.senderId == sender {
+            cell.textView.textColor = UIColor.whiteColor()
+        } else {
+            cell.textView.textColor = UIColor.blackColor()
+        }
         
         let attributes : [String:AnyObject] = [NSForegroundColorAttributeName:cell.textView.textColor!, NSUnderlineStyleAttributeName: 1]
         cell.textView.linkTextAttributes = attributes
+        
+//        let view = UIView(frame: cell.fra)
+        
+        
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: cell.contentView.frame.width, height: cell.contentView.frame.height))
+        button.setTitle("", forState: .Normal)
+        button.addTarget(self, action: #selector(ChatViewController.clickedTask), forControlEvents: .TouchDown)
+        cell.contentView.addSubview(button)
         
 //        cell.textView.linkTextAttributes = [NSForegroundColorAttributeName: cell.textView.textColor!, NSUnderlineStyleAttributeName: 1]
         return cell
     }
     
+    func clickedTask(){
+        if CURRENT_USSER_IS_TEACHER {
+            self.delegate.showTaskSummary()
+        }
+        else{
+            self.delegate.goToPlayView()
+        }
+    }
+    
     // View  usernames above bubbles
     override func collectionView(collectionView: JSQMessagesCollectionView!, attributedTextForMessageBubbleTopLabelAtIndexPath indexPath: NSIndexPath!) -> NSAttributedString! {
-        let message = messages[indexPath.item];
+        let message = messages?[indexPath.item];
         
         // Sent by me, skip
-        if message.senderId() == sender {
+        if message!.senderId == sender {
             return nil;
         }
         
         // Same as previous sender, skip
         if indexPath.item > 0 {
-            let previousMessage = messages[indexPath.item - 1];
-            if previousMessage.senderId() == message.senderId() {
+            let previousMessage = messages?[indexPath.item - 1];
+            if previousMessage!.senderId == message!.senderId {
                 return nil;
             }
         }
         
-        return NSAttributedString(string:message.senderId())
+        return NSAttributedString(string:message!.senderId)
     }
 
-    override func collectionView(collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForMessageBubbleTopLabelAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
-        let message = messages[indexPath.item]
-        
-        // Sent by me, skip
-        if message.senderId() == sender {
-            return CGFloat(0.0);
-        }
-        
-        // Same as previous sender, skip
-        if indexPath.item > 0 {
-            let previousMessage = messages[indexPath.item - 1];
-            if previousMessage.senderId() == message.senderId() {
-                return CGFloat(0.0);
-            }
-        }
-        
-        return kJSQMessagesCollectionViewCellLabelHeightDefault
-    }
-    
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageBubbleImageDataSource! {
-        let message = messages[indexPath.item]
-        
-        if message.senderId() == sender {
-            return outgoingBubble
+        let message = self.messages?[indexPath.item]
+        if message?.senderId == self.senderId {
+            return self.outgoingBubble
         }
+        return self.incomingBubble
         
-        return incomingBubble
         
     }
     
-    override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource! {
-        return nil
+    //accessory part
+    override func didPressAccessoryButton(sender: UIButton!) {
+        showAlert()
     }
     
+    
+    func showAlert(){
+        
+        let alert = UIAlertController(title: "Limba",message: nil, preferredStyle: .ActionSheet)
+        
+        let firstAction = UIAlertAction(title: "Send Task", style: .Default){
+            action in
+            
+            //TODOTODOTODOTODOTODOTO            
+            DID_COME_FROM_CHAT = true;
+            self.delegate.goToTaskCreation()
+            
+            
+        }
+        let secondAction = UIAlertAction(title: "Send Photo", style: .Default){
+            action in
+            self.presentPickerController(.PhotoLibrary)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Default,handler : nil)
+        
+        
+        alert.addAction(firstAction)
+        alert.addAction(secondAction)
+        alert.addAction(cancelAction)
+        
+        
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func closeTask(){
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func presentTask(){
+        
+    }
+    
+    func sendTaskMessage(){
+        self.sendMessage("teacher1 sent a task. Click here to complete!", sender: "teacher1", msg_date: NSDate())
+    }
+    
+    func sendTaskCompMessage(){
+        self.sendMessage("Katie H completed a task. Click here to view!", sender: CURRENT_USER_ID, msg_date: NSDate())
+    }
+    
+    
+    func presentPickerController(sourceType:UIImagePickerControllerSourceType){
+        if UIImagePickerController.isSourceTypeAvailable(sourceType){
+            let picker = UIImagePickerController()
+            picker.sourceType = sourceType
+//            picker.delegate = self
+            self.presentViewController(picker, animated:true, completion:nil)
+        }
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: NSDictionary!) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        //写真をJSQPhotoMediaItemの型で配列に追加
+        let photoItem = JSQPhotoMediaItem(image: image)
+        photoItems?.append(photoItem)
+        //新しいメッセージデータを追加する
+        let message = JSQMessage(senderId: senderId, displayName: senderDisplayName, media: photoItems![photoItems!.count-1])
+        
+//        sendMessage(message)
+    }
     
     //END JSQ MESSAGE COLLECTION VIEW SECTION ------------------------------------------------------------------------
     

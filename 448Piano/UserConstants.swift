@@ -20,8 +20,6 @@ var STUDENT_SELECTED_ID : String = ""
 
 var SELECTED_THREAD_ID : String = "" //use for when a chat thread is selected
 
+var DID_COME_FROM_CHAT = false
 
-
-
-
-
+var CURRENT_USSER_IS_TEACHER = false

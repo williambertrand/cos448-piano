@@ -12,6 +12,8 @@ import Firebase
 
 protocol LogInDelegate {
     func handleLoggedIn()
+    func handleLoggedInStudent()
+    func handleLoggedInTeacher()
 }
 
 class LogInSignUpScreen: UIViewController, UITextFieldDelegate {
@@ -57,6 +59,15 @@ class LogInSignUpScreen: UIViewController, UITextFieldDelegate {
         butWidth = width * 0.84
         butHeight = height * 0.05
         
+        
+        //image
+        let limbaFrame = CGRect(x: width * 0.5 - 90, y: 50, width: 220, height: 220)
+        let limbaImage = UIImageView(frame: limbaFrame)
+        limbaImage.image = UIImage(named: "limbacolor")
+        limbaImage.contentMode = .ScaleAspectFit
+        self.view.addSubview(limbaImage)
+    
+        
         //add scroll views
         scrollingView1 = UIImageView(frame: CGRect(x: 0, y: viewY, width: viewWidth, height: viewHeight))
         scrollingView2 = UIImageView(frame: CGRect(x: viewWidth, y: viewY, width: viewWidth, height: viewHeight))
@@ -79,6 +90,7 @@ class LogInSignUpScreen: UIViewController, UITextFieldDelegate {
         userPasswordEntry.placeholder="password"
         usernameEntry.textAlignment = .Center
         userPasswordEntry.textAlignment = .Center
+        userPasswordEntry.delegate = self
         
         self.view.addSubview(usernameEntry)
         self.view.addSubview(userPasswordEntry)
@@ -222,7 +234,27 @@ class LogInSignUpScreen: UIViewController, UITextFieldDelegate {
                 self.delegate.handleLoggedIn()
             } else {
                 // user is logged in, check authData for data
-                self.delegate.handleLoggedIn()
+                let ref2 = Firebase(url: ("https://limba.firebaseio.com/users/" + authData.uid))
+                
+                ref2.observeEventType(.Value, withBlock: {snapshot in
+                    print(snapshot.value)
+                    let user : NSDictionary = snapshot.value as! NSDictionary
+                    let type : String = user["type"] as! String
+                    CURRENT_USER_NAME = user["name"] as! String
+                    CURRENT_USER_ID = authData.uid
+                    print(CURRENT_USER_NAME)
+                    if type == "student" {
+                        CURRENT_USSER_IS_TEACHER = false
+                        self.delegate.handleLoggedInStudent()
+                    }
+                    else {
+                        CURRENT_USSER_IS_TEACHER = true
+                        self.delegate.handleLoggedInTeacher()
+                    }
+                    
+                    
+                })
+                
             }
         }
         
@@ -237,7 +269,6 @@ class LogInSignUpScreen: UIViewController, UITextFieldDelegate {
     //MARK UITEXTVIEWDELEGATE METHODS ----
     func textFieldDidBeginEditing(textField: UITextField) {
         if textField == self.userPasswordEntry {
-            self.logInButton.layer.backgroundColor = LINE_COLOR_RB2.CGColor
         }
     }
     
@@ -255,7 +286,10 @@ class LogInSignUpScreen: UIViewController, UITextFieldDelegate {
                 // an error occured while attempting login
             } else {
                 // user is logged in, check authData for data
-                self.delegate.handleLoggedIn()
+                CURRENT_USER_ID = "teacher1"
+                CURRENT_USSER_IS_TEACHER = true
+                self.delegate.handleLoggedInTeacher()
+                
             }
         }
 
@@ -263,16 +297,23 @@ class LogInSignUpScreen: UIViewController, UITextFieldDelegate {
     }
     
     func testStudentLogin(){
-        ref.authUser("student@bc.com", password: "pass") {
+        ref.authUser("kh@abc.com", password: "pass") {
             error, authData in
             if error != nil {
                 // an error occured while attempting login
             } else {
                 // user is logged in, check authData for data
-                self.delegate.handleLoggedIn()
+                CURRENT_USSER_IS_TEACHER = false
+                CURRENT_USER_ID = authData.uid
+                self.delegate.handleLoggedInStudent()
+                
             }
         }
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
 }

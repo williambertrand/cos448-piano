@@ -15,6 +15,12 @@ protocol SideMenuDelegate {
     func transitionToChatThreadPage()
     func transitionToCreateTaskPage()
     func transitionToAllTasksPage()
+    func goToDashBoard()
+    func showAboutUs()
+    
+    //student
+    func goToStudentDashboard()
+    
 }
 
 class SideMenuViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -26,8 +32,8 @@ class SideMenuViewController : UIViewController, UITableViewDelegate, UITableVie
     var menuTableView : UITableView!
     var titleNameLabel : UILabel!
     
-    var menuLabels = ["Account", "Students","Chat","Tasks","New Task","Calendar", "Settings", "Help", "Contact US", "Log out"];
-    var menuImages = [UIImage(named:"profile"),UIImage(named:"graphStand"),UIImage(named:"chatIcon"), UIImage(named:"clipboard") ,UIImage(named:"edit"), UIImage(named:"Calendar"),UIImage(named:"settingsSwitch"),UIImage(named:"help"),UIImage(named:"letterIcon"), UIImage(named:"logout")]
+    var menuLabels = ["Dashboard","Account", "Students","Chat","Tasks","New Task","Calendar", "Settings", "Help", "About Us", "Log out"];
+    var menuImages = [UIImage(named: "graph"),UIImage(named:"profile"),UIImage(named:"graphStand"),UIImage(named:"chatIcon"), UIImage(named:"clipboard") ,UIImage(named:"edit"), UIImage(named:"Calendar"),UIImage(named:"settingsSwitch"),UIImage(named:"help"),UIImage(named:"letterIcon"), UIImage(named:"logout")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,13 +55,13 @@ class SideMenuViewController : UIViewController, UITableViewDelegate, UITableVie
         self.view.addSubview(closeButton)
         
         //add label
-        //add a label showing student name
+        //add a label showing student/teacher name
         let nameLabel = UILabel(frame: CGRect(x: 0, y: self.view.frame.height * 0.05, width: self.view.frame.width * scale - x_inset, height: self.view.frame.height * 0.025))
-        nameLabel.text = CURRENT_USER_ID //TODO change to name
+        nameLabel.text = CURRENT_USER_NAME //TODO change to name
         nameLabel.textAlignment = .Center
         self.view.addSubview(nameLabel)
         
-        menuTableView = UITableView(frame: CGRect(x: x_inset, y: height * 0.2, width: width * scale - (4 * x_inset), height: height * 0.6))
+        menuTableView = UITableView(frame: CGRect(x: x_inset, y: height * 0.2, width: width * scale - (4 * x_inset), height: height * 0.8))
         self.menuTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell") // TODO change if want unique cells
         menuTableView.separatorStyle = .None
         menuTableView.scrollEnabled = false
@@ -110,8 +116,8 @@ class SideMenuViewController : UIViewController, UITableViewDelegate, UITableVie
         //send over to student profile view
         
         //TODO
-        let selectedItem = menuLabels[indexPath.row]
-        handleMenuSelection(selectedItem)
+        //let selectedItem = menuLabels[indexPath.row]
+        //handleMenuSelection(selectedItem)
         
     }
     
@@ -124,18 +130,46 @@ class SideMenuViewController : UIViewController, UITableViewDelegate, UITableVie
 
     
     func handleMenuSelection(selectedItem : String) {
-        if selectedItem == "Students"{
-            delegate?.transitionToStudentPage()
+        
+        if CURRENT_USSER_IS_TEACHER {
+            if selectedItem == "Dashboard" {
+                delegate?.goToDashBoard()
+            }
+            else if selectedItem == "Students"{
+                delegate?.transitionToStudentPage()
+            }
+            else if selectedItem == "Chat"{
+                delegate?.transitionToChatThreadPage()
+            }
+            else if selectedItem == "New Task"{
+                delegate?.transitionToCreateTaskPage()
+            }
+            else if selectedItem == "Tasks" {
+                delegate?.transitionToAllTasksPage()
+            }
+            else if selectedItem == "About Us"{
+                delegate?.showAboutUs()
+            }
+            
         }
-        else if selectedItem == "Chat"{
-            delegate?.transitionToChatThreadPage()
+        else {
+            if selectedItem == "Dashboard" {
+                delegate?.goToStudentDashboard()
+            }
+            else if selectedItem == "Students"{
+                delegate?.transitionToStudentPage()
+            }
+            else if selectedItem == "Chat"{
+                delegate?.goToStudentDashboard()
+            }
+            else if selectedItem == "New Task"{
+                delegate?.transitionToCreateTaskPage()
+            }
+            else if selectedItem == "Tasks" {
+                delegate?.transitionToAllTasksPage()
+            }
         }
-        else if selectedItem == "New Task"{
-            delegate?.transitionToCreateTaskPage()
-        }
-        else if selectedItem == "Tasks" {
-            delegate?.transitionToAllTasksPage()
-        }
+        
         
     }
     

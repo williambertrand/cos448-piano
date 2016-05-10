@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Caption</key>
+		<string>Book Title</string>
+		<key>Comment</key>
+		<string>A great started book for beginners</string>
+		<key>Photo</key>
+		<string>01</string>
+	</dict>
+	<dict>
+		<key>Caption</key>
+		<string>Book Title 2</string>
+		<key>Comment</key>
+		<string>A book for ages 5-7</string>
+		<key>Photo</key>
+		<string>02</string>
+	</dict>
+	<dict>
+		<key>Caption</key>
+		<string>Intermediate Lessons</string>
+		<key>Comment</key>
+		<string>A book for the slightly more experienced pianist</string>
+		<key>Photo</key>
+		<string>03</string>
+	</dict>
+	<dict>
+		<key>Caption</key>
+		<string>Advanced</string>
+		<key>Comment</key>
+		<string>For the final level of your introductory piano career</string>
+		<key>Photo</key>
+		<string>04</string>
+	</dict>
+	<dict>
+		<key>Caption</key>
+		<string>Advertisement</string>
+		<key>Comment</key>
+		<string>An advertisement for pianos</string>
+		<key>Photo</key>
+		<string>05</string>
+	</dict>
+	<dict>
+		<key>Caption</key>
+		<string>Beginner&apos;s Book 2</string>
+		<key>Comment</key>
+		<string>Jump right into piano with this book.</string>
+		<key>Photo</key>
+		<string>06</string>
+	</dict>
+	<dict>
+		<key>Caption</key>
+		<string>Classical Pieces</string>
+		<key>Comment</key>
+		<string>A collection of classical sheet music</string>
+		<key>Photo</key>
+		<string>07</string>
+	</dict>
+	<dict>
+		<key>Caption</key>
+		<string>Contemporary pieces</string>
+		<key>Comment</key>
+		<string>A collection of contemporary music</string>
+		<key>Photo</key>
+		<string>08</string>
+	</dict>
+	<dict>
+		<key>Caption</key>
+		<string>Today&apos;s Hits on Piano</string>
+		<key>Comment</key>
+		<string>Today&apos;s hits for beginner piano players</string>
+		<key>Photo</key>
+		<string>09</string>
+	</dict>
+</array>
+</plist>

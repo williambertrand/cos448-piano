@@ -22,6 +22,20 @@
 		3D5EF01C1CAB31C300A03D4F /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EF01B1CAB31C300A03D4F /* LaunchViewController.swift */; };
 		3D5EF01E1CAB491900A03D4F /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5EF01D1CAB491900A03D4F /* Dashboard.swift */; };
 		3D69333B1CC82BDF007D8969 /* TeacherDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D69333A1CC82BDF007D8969 /* TeacherDashboardViewController.swift */; };
+		3D6C977A1CD670E800E7D536 /* StudentDashboardViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C97791CD670E800E7D536 /* StudentDashboardViewContoller.swift */; };
+		3D6C977D1CD6846600E7D536 /* StudentStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C977C1CD6846600E7D536 /* StudentStoreViewController.swift */; };
+		3D6C977F1CD68E9A00E7D536 /* StudentTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C977E1CD68E9A00E7D536 /* StudentTasksViewController.swift */; };
+		3D6C97811CD6911700E7D536 /* StudentTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C97801CD6911600E7D536 /* StudentTaskTableViewCell.swift */; };
+		3D6C97831CD6E36500E7D536 /* RoundedCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C97821CD6E36500E7D536 /* RoundedCornersView.swift */; };
+		3D6C97891CD6E3F900E7D536 /* AnnotatedPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C97881CD6E3F900E7D536 /* AnnotatedPhotoCell.swift */; };
+		3D6C978B1CD6E45400E7D536 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C978A1CD6E45400E7D536 /* PinterestLayout.swift */; };
+		3D6C978D1CD6E47900E7D536 /* PhotoStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C978C1CD6E47900E7D536 /* PhotoStreamViewController.swift */; };
+		3D6C978F1CD6E4C500E7D536 /* UIImage+Decompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C978E1CD6E4C500E7D536 /* UIImage+Decompression.swift */; };
+		3D6C97911CD6E52600E7D536 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C97901CD6E52600E7D536 /* Photo.swift */; };
+		3D6C97941CD6E5FC00E7D536 /* Photos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D6C97921CD6E5FC00E7D536 /* Photos.plist */; };
+		3D6C97951CD6E5FC00E7D536 /* Photos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D6C97931CD6E5FC00E7D536 /* Photos.xcassets */; };
+		3D6C97981CD7722F00E7D536 /* StudentPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C97971CD7722F00E7D536 /* StudentPlayView.swift */; };
+		3D6C979A1CD79A9F00E7D536 /* StudentReviewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C97991CD79A9F00E7D536 /* StudentReviewPage.swift */; };
 		3D9CB6601CCF3FFA00A27DA1 /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9CB65F1CCF3FFA00A27DA1 /* Segues.swift */; };
 		3D9CB6621CD08D8100A27DA1 /* LogInSignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9CB6611CD08D8100A27DA1 /* LogInSignUpScreen.swift */; };
 		3D9CB6661CD2822000A27DA1 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9CB6651CD2822000A27DA1 /* Task.swift */; };
@@ -38,12 +52,16 @@
 		3DAD096D1CCB6EB7005F83A5 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD096C1CCB6EB7005F83A5 /* ChatViewController.swift */; };
 		3DAD09701CCB6F0B005F83A5 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD096F1CCB6F0B005F83A5 /* MessageCell.swift */; };
 		3DAD09721CCB6F31005F83A5 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD09711CCB6F31005F83A5 /* Message.swift */; };
+		3DB368951CD40A39009EBA3E /* TeacherCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB368941CD40A39009EBA3E /* TeacherCalendarView.swift */; };
+		3DB368981CD40B4A009EBA3E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB368971CD40B4A009EBA3E /* Event.swift */; };
+		3DB3689A1CD431FD009EBA3E /* CreateThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB368991CD431FD009EBA3E /* CreateThreadViewController.swift */; };
 		3DDC72DB1CD3014900FFE333 /* AutoCompleteTextField in Resources */ = {isa = PBXBuildFile; fileRef = 3DDC72DA1CD3014900FFE333 /* AutoCompleteTextField */; };
 		3DDC72DD1CD301DE00FFE333 /* AutoCompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDC72DC1CD301DE00FFE333 /* AutoCompleteTextField.swift */; };
 		3DDC72DF1CD3A63500FFE333 /* TeacherAllTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDC72DE1CD3A63500FFE333 /* TeacherAllTasksViewController.swift */; };
 		3DFA37611CCD1D5900BA9EA7 /* ChatThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFA37601CCD1D5900BA9EA7 /* ChatThreadViewController.swift */; };
 		3DFA37631CCD29CB00BA9EA7 /* ChatThreadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFA37621CCD29CB00BA9EA7 /* ChatThreadTableViewCell.swift */; };
 		3DFA37651CCD9A0300BA9EA7 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFA37641CCD9A0300BA9EA7 /* Thread.swift */; };
+		3DFEEC761CD53932009F9B46 /* SimpleChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFEEC751CD53932009F9B46 /* SimpleChatViewController.swift */; };
 		904BA43041D4F5ADBF5AB2EC /* Pods_448PianoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B5FF334F806C4BEC6EDF693 /* Pods_448PianoUITests.framework */; };
 		9244236591F52E86D19CD4D9 /* Pods_448Piano.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93DAE4F0CD6DDC3683D48749 /* Pods_448Piano.framework */; };
 		98ADF87838AE26665DADD6F2 /* Pods_448PianoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7E7C5DB0450A896615D4460 /* Pods_448PianoTests.framework */; };
@@ -89,6 +107,20 @@
 		3D5EF01B1CAB31C300A03D4F /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		3D5EF01D1CAB491900A03D4F /* Dashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		3D69333A1CC82BDF007D8969 /* TeacherDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherDashboardViewController.swift; sourceTree = "<group>"; };
+		3D6C97791CD670E800E7D536 /* StudentDashboardViewContoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentDashboardViewContoller.swift; sourceTree = "<group>"; };
+		3D6C977C1CD6846600E7D536 /* StudentStoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentStoreViewController.swift; sourceTree = "<group>"; };
+		3D6C977E1CD68E9A00E7D536 /* StudentTasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentTasksViewController.swift; sourceTree = "<group>"; };
+		3D6C97801CD6911600E7D536 /* StudentTaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentTaskTableViewCell.swift; sourceTree = "<group>"; };
+		3D6C97821CD6E36500E7D536 /* RoundedCornersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersView.swift; sourceTree = "<group>"; };
+		3D6C97881CD6E3F900E7D536 /* AnnotatedPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotatedPhotoCell.swift; sourceTree = "<group>"; };
+		3D6C978A1CD6E45400E7D536 /* PinterestLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
+		3D6C978C1CD6E47900E7D536 /* PhotoStreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoStreamViewController.swift; sourceTree = "<group>"; };
+		3D6C978E1CD6E4C500E7D536 /* UIImage+Decompression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Decompression.swift"; path = "../../../../UIImage+Decompression.swift"; sourceTree = "<group>"; };
+		3D6C97901CD6E52600E7D536 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		3D6C97921CD6E5FC00E7D536 /* Photos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Photos.plist; sourceTree = "<group>"; };
+		3D6C97931CD6E5FC00E7D536 /* Photos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Photos.xcassets; sourceTree = "<group>"; };
+		3D6C97971CD7722F00E7D536 /* StudentPlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentPlayView.swift; sourceTree = "<group>"; };
+		3D6C97991CD79A9F00E7D536 /* StudentReviewPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentReviewPage.swift; sourceTree = "<group>"; };
 		3D9CB65F1CCF3FFA00A27DA1 /* Segues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
 		3D9CB6611CD08D8100A27DA1 /* LogInSignUpScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInSignUpScreen.swift; sourceTree = "<group>"; };
 		3D9CB6651CD2822000A27DA1 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
@@ -106,12 +138,16 @@
 		3DAD096F1CCB6F0B005F83A5 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		3DAD09711CCB6F31005F83A5 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		3DAD09741CCB761A005F83A5 /* 448Piano-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "448Piano-Bridging-Header.h"; sourceTree = "<group>"; };
+		3DB368941CD40A39009EBA3E /* TeacherCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherCalendarView.swift; sourceTree = "<group>"; };
+		3DB368971CD40B4A009EBA3E /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		3DB368991CD431FD009EBA3E /* CreateThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateThreadViewController.swift; sourceTree = "<group>"; };
 		3DDC72DA1CD3014900FFE333 /* AutoCompleteTextField */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AutoCompleteTextField; path = ../AutoCompleteTextField; sourceTree = "<group>"; };
 		3DDC72DC1CD301DE00FFE333 /* AutoCompleteTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextField.swift; sourceTree = "<group>"; };
 		3DDC72DE1CD3A63500FFE333 /* TeacherAllTasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherAllTasksViewController.swift; sourceTree = "<group>"; };
 		3DFA37601CCD1D5900BA9EA7 /* ChatThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatThreadViewController.swift; sourceTree = "<group>"; };
 		3DFA37621CCD29CB00BA9EA7 /* ChatThreadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatThreadTableViewCell.swift; sourceTree = "<group>"; };
 		3DFA37641CCD9A0300BA9EA7 /* Thread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
+		3DFEEC751CD53932009F9B46 /* SimpleChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleChatViewController.swift; sourceTree = "<group>"; };
 		3FCE67F0D1DD4DBEAF023C88 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48F87A296A3A3352800E6103 /* Pods-448PianoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-448PianoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-448PianoTests/Pods-448PianoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		67248FE20375FBFB42C5C849 /* Pods-448Piano.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-448Piano.debug.xcconfig"; path = "Pods/Target Support Files/Pods-448Piano/Pods-448Piano.debug.xcconfig"; sourceTree = "<group>"; };
@@ -176,8 +212,10 @@
 		3D42B7E91C9A58E5006C8444 /* 448Piano */ = {
 			isa = PBXGroup;
 			children = (
+				3DB368961CD40B35009EBA3E /* Calendar */,
 				3DDC72DA1CD3014900FFE333 /* AutoCompleteTextField */,
 				3D42B7EA1C9A58E5006C8444 /* AppDelegate.swift */,
+				3D6C977B1CD670F100E7D536 /* Student Views */,
 				3D9CB6671CD285A700A27DA1 /* Task Stuff */,
 				3D9CB6641CD2816E00A27DA1 /* Container VC */,
 				3DAD096A1CCAA7AD005F83A5 /* StudentsViewController.swift */,
@@ -230,6 +268,7 @@
 		3D5EF0181CAB314F00A03D4F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				3D6C97961CD6E81800E7D536 /* Extra CV */,
 				3D5EF0161CAB314400A03D4F /* Colors.swift */,
 				3DAD09571CC9A565005F83A5 /* FirebaseConstants.swift */,
 				3DAD095D1CC9AB47005F83A5 /* UserConstants.swift */,
@@ -237,6 +276,33 @@
 				3D9CB65F1CCF3FFA00A27DA1 /* Segues.swift */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		3D6C977B1CD670F100E7D536 /* Student Views */ = {
+			isa = PBXGroup;
+			children = (
+				3D6C97791CD670E800E7D536 /* StudentDashboardViewContoller.swift */,
+				3D6C977E1CD68E9A00E7D536 /* StudentTasksViewController.swift */,
+				3D6C97801CD6911600E7D536 /* StudentTaskTableViewCell.swift */,
+				3D6C97971CD7722F00E7D536 /* StudentPlayView.swift */,
+				3D6C97991CD79A9F00E7D536 /* StudentReviewPage.swift */,
+			);
+			name = "Student Views";
+			sourceTree = "<group>";
+		};
+		3D6C97961CD6E81800E7D536 /* Extra CV */ = {
+			isa = PBXGroup;
+			children = (
+				3D6C97921CD6E5FC00E7D536 /* Photos.plist */,
+				3D6C97931CD6E5FC00E7D536 /* Photos.xcassets */,
+				3D6C97821CD6E36500E7D536 /* RoundedCornersView.swift */,
+				3D6C97881CD6E3F900E7D536 /* AnnotatedPhotoCell.swift */,
+				3D6C978A1CD6E45400E7D536 /* PinterestLayout.swift */,
+				3D6C97901CD6E52600E7D536 /* Photo.swift */,
+				3D6C978C1CD6E47900E7D536 /* PhotoStreamViewController.swift */,
+				3D6C978E1CD6E4C500E7D536 /* UIImage+Decompression.swift */,
+			);
+			name = "Extra CV";
 			sourceTree = "<group>";
 		};
 		3D9CB6631CD192CF00A27DA1 /* Menu */ = {
@@ -252,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				3D42B7EC1C9A58E5006C8444 /* ViewController.swift */,
+				3D6C977C1CD6846600E7D536 /* StudentStoreViewController.swift */,
 			);
 			name = "Container VC";
 			sourceTree = "<group>";
@@ -281,6 +348,8 @@
 			isa = PBXGroup;
 			children = (
 				3DAD096C1CCB6EB7005F83A5 /* ChatViewController.swift */,
+				3DFEEC751CD53932009F9B46 /* SimpleChatViewController.swift */,
+				3DB368991CD431FD009EBA3E /* CreateThreadViewController.swift */,
 				3DFA37601CCD1D5900BA9EA7 /* ChatThreadViewController.swift */,
 				3DFA37621CCD29CB00BA9EA7 /* ChatThreadTableViewCell.swift */,
 				3DAD096F1CCB6F0B005F83A5 /* MessageCell.swift */,
@@ -288,6 +357,15 @@
 				3DFA37641CCD9A0300BA9EA7 /* Thread.swift */,
 			);
 			name = Chat;
+			sourceTree = "<group>";
+		};
+		3DB368961CD40B35009EBA3E /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				3DB368941CD40A39009EBA3E /* TeacherCalendarView.swift */,
+				3DB368971CD40B4A009EBA3E /* Event.swift */,
+			);
+			name = Calendar;
 			sourceTree = "<group>";
 		};
 		6AAE7859A81C025C92C8336B /* Pods */ = {
@@ -434,8 +512,10 @@
 			files = (
 				3DDC72DB1CD3014900FFE333 /* AutoCompleteTextField in Resources */,
 				3D42B7F81C9A58E5006C8444 /* LaunchScreen.storyboard in Resources */,
+				3D6C97951CD6E5FC00E7D536 /* Photos.xcassets in Resources */,
 				3D42B7F51C9A58E5006C8444 /* Assets.xcassets in Resources */,
 				3D42B7F01C9A58E5006C8444 /* Main.storyboard in Resources */,
+				3D6C97941CD6E5FC00E7D536 /* Photos.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,11 +712,17 @@
 				3DFA37631CCD29CB00BA9EA7 /* ChatThreadTableViewCell.swift in Sources */,
 				3DA936111CD3B6F600D0C9B4 /* TaskTableViewCell.swift in Sources */,
 				3D5EF0171CAB314400A03D4F /* Colors.swift in Sources */,
+				3D6C977A1CD670E800E7D536 /* StudentDashboardViewContoller.swift in Sources */,
 				3DAD09671CCA6A62005F83A5 /* TestViewController.swift in Sources */,
 				3D5EF01E1CAB491900A03D4F /* Dashboard.swift in Sources */,
 				3D42B7F31C9A58E5006C8444 /* _48Piano.xcdatamodeld in Sources */,
+				3D6C97831CD6E36500E7D536 /* RoundedCornersView.swift in Sources */,
+				3D6C977D1CD6846600E7D536 /* StudentStoreViewController.swift in Sources */,
 				3D9CB6691CD285C500A27DA1 /* TeacherTaskCreationViewController.swift in Sources */,
+				3D6C977F1CD68E9A00E7D536 /* StudentTasksViewController.swift in Sources */,
+				3DB368981CD40B4A009EBA3E /* Event.swift in Sources */,
 				3DAD09601CC9BD73005F83A5 /* TeacherViewStudentViewController.swift in Sources */,
+				3DB368951CD40A39009EBA3E /* TeacherCalendarView.swift in Sources */,
 				3D42B7ED1C9A58E5006C8444 /* ViewController.swift in Sources */,
 				3DDC72DD1CD301DE00FFE333 /* AutoCompleteTextField.swift in Sources */,
 				3D9CB6661CD2822000A27DA1 /* Task.swift in Sources */,
@@ -645,18 +731,28 @@
 				3D9CB6621CD08D8100A27DA1 /* LogInSignUpScreen.swift in Sources */,
 				3DAD095E1CC9AB47005F83A5 /* UserConstants.swift in Sources */,
 				3DAD096B1CCAA7AD005F83A5 /* StudentsViewController.swift in Sources */,
+				3D6C97891CD6E3F900E7D536 /* AnnotatedPhotoCell.swift in Sources */,
 				3DAD09701CCB6F0B005F83A5 /* MessageCell.swift in Sources */,
 				3D5EF01C1CAB31C300A03D4F /* LaunchViewController.swift in Sources */,
 				3DFA37611CCD1D5900BA9EA7 /* ChatThreadViewController.swift in Sources */,
 				3DAD09691CCA6E48005F83A5 /* SideMenuViewController.swift in Sources */,
+				3D6C97811CD6911700E7D536 /* StudentTaskTableViewCell.swift in Sources */,
 				3DAD09631CC9DD1C005F83A5 /* Misc_constants.swift in Sources */,
 				3DAD09531CC94509005F83A5 /* TopBar.swift in Sources */,
 				3D69333B1CC82BDF007D8969 /* TeacherDashboardViewController.swift in Sources */,
+				3DFEEC761CD53932009F9B46 /* SimpleChatViewController.swift in Sources */,
+				3D6C978D1CD6E47900E7D536 /* PhotoStreamViewController.swift in Sources */,
 				3DAD09581CC9A565005F83A5 /* FirebaseConstants.swift in Sources */,
+				3D6C978B1CD6E45400E7D536 /* PinterestLayout.swift in Sources */,
+				3D6C978F1CD6E4C500E7D536 /* UIImage+Decompression.swift in Sources */,
+				3D6C97981CD7722F00E7D536 /* StudentPlayView.swift in Sources */,
+				3D6C979A1CD79A9F00E7D536 /* StudentReviewPage.swift in Sources */,
 				3D9CB6601CCF3FFA00A27DA1 /* Segues.swift in Sources */,
 				3DAD09721CCB6F31005F83A5 /* Message.swift in Sources */,
 				3DFA37651CCD9A0300BA9EA7 /* Thread.swift in Sources */,
+				3D6C97911CD6E52600E7D536 /* Photo.swift in Sources */,
 				3DAD096D1CCB6EB7005F83A5 /* ChatViewController.swift in Sources */,
+				3DB3689A1CD431FD009EBA3E /* CreateThreadViewController.swift in Sources */,
 				3D5EF01A1CAB316D00A03D4F /* RectangleLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

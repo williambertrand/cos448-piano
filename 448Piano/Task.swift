@@ -18,25 +18,27 @@ enum TaskType {
 
 class Task : NSObject {
     
-    var senderId_ : String
+    var senderId_ : String!
     var senderDisplayName_ : String!
     
-    var receiverId_ : String
+    var receiverId_ : String!
     var receiverDisplayName_ : String!
     
-    var assignedDate_ : NSDate
+    var assignedDate_ : NSDate!
     var dueDate_ : NSDate! //dueDate not required
     
     var description_ : String!
-    var title_ : String
+    var title_ : String!
     
-    var type_ : TaskType
+    var type_ : TaskType!
     
     var completionDate_ : NSDate!
     
     var completionDetails_ : NSDictionary!
     
-    init(senderId: String, senderDisplayName: String?, receiverID : String, receiverDisplayName: String?, assignedDate: NSDate, dueDate: NSDate?,title:String, description:String?, type : TaskType) {
+    var status_ : String!
+    
+    init(senderId: String, senderDisplayName: String?, receiverID : String!, receiverDisplayName: String?, assignedDate: NSDate, dueDate: NSDate?,title:String!, description:String?, type : TaskType!,status : String!) {
         self.senderId_ = senderId
         self.senderDisplayName_ = senderDisplayName
         self.receiverId_ = receiverID
@@ -46,6 +48,7 @@ class Task : NSObject {
         self.title_ = title
         self.description_ = description
         self.type_ = type
+        self.status_ = status
     }
     
     func hasDueDate() -> Bool{
@@ -69,6 +72,10 @@ class Task : NSObject {
     }
     func setCompletionDetails(dict : NSDictionary){
         self.completionDetails_ = dict
+    }
+    
+    func status() -> String{
+        return status_
     }
     
 }

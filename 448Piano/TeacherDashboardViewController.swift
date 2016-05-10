@@ -26,6 +26,8 @@ class TeacherDashboardViewController : UIViewController, UITableViewDelegate,UIT
     var studentTableView: UITableView!
     var students : NSMutableArray = []
     
+    var notificationLabel : UILabel!
+    
     
     //series for charts
     let timeSeries = ChartSeries([2, 4, 3, 5, 5, 8, 8, 7, 9]);
@@ -53,7 +55,7 @@ class TeacherDashboardViewController : UIViewController, UITableViewDelegate,UIT
         chartTitleLabel = UILabel(frame: CGRect(x: 0, y: self.view.frame.height * 0.05, width: self.view.frame.width, height: self.view.frame.height * 0.1))
         chartTitleLabel.textAlignment = .Center
         chartTitleLabel.text = ("Previous Week For All Students") //TODO change to name
-        chartTitleLabel.textAlignment = .Left
+        chartTitleLabel.textAlignment = .Center
         scrollView.addSubview(chartTitleLabel)
         
         let timebuttonFrame = CGRect(x: x_inset, y: height * 0.16, width: width * 0.4, height: height * 0.04)
@@ -105,12 +107,13 @@ class TeacherDashboardViewController : UIViewController, UITableViewDelegate,UIT
         
         let notifyViewPlaceHolder = UIView(frame: notifyFrame);
         
-        let notificationLabel = UILabel(frame: notifyFrame);
-        notificationLabel.text = "Notifications"
+        notificationLabel = UILabel(frame: CGRect(x: 0, y: 0, width: x_width, height: notHeight))
+        notificationLabel.text = "0 New Notifications"
         notificationLabel.textColor =  UIColor.whiteColor();
         notificationLabel.textAlignment = .Center
         
-        notifyViewPlaceHolder.backgroundColor = LINE_COLOR_RB2
+        notifyViewPlaceHolder.layer.cornerRadius = 10
+        notifyViewPlaceHolder.backgroundColor = LINE_COLOR_RB2_5
         notifyViewPlaceHolder.addSubview(notificationLabel);
         scrollView.addSubview(notifyViewPlaceHolder);
 
@@ -180,12 +183,14 @@ class TeacherDashboardViewController : UIViewController, UITableViewDelegate,UIT
             let user : NSDictionary = snapshot.value as! NSDictionary
             let studentDict : NSDictionary = user["students"] as! NSDictionary
             let studentList : [AnyObject] = studentDict.allKeys
-            
+            print(studentDict.allKeys)
             for username in studentList {
                 let str = "https://limba.firebaseio.com/users/" + (username as! String);
                 let fbStudent = Firebase(url: str);
                 fbStudent.observeSingleEventOfType(.Value, withBlock: {snapshot in
                     let student = snapshot.value
+                    print(snapshot.value)
+                    print("cccc")
                     self.students.addObject(student)
                     self.studentTableView.reloadData()
                     }, withCancelBlock: {error in

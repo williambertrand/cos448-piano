@@ -56,8 +56,9 @@ class HolderView: UIView {
     
     func animateFirstRect(){
         print("animating first rec")
-        let endFrame = CGRect(x: self.frame.width * offset, y: self.frame.height / 2 - 10, width: 10, height: 40)
-        let nextEndFrame = CGRect(x: frame.width * offset , y: frame.height / 2, width: 10, height: 40)
+        let endFrame = CGRect(x: self.frame.width * offset, y: self.frame.height * 0.2 - 10, width: 10, height: 40)
+        let nextEndFrame = CGRect(x: frame.width * offset , y: frame.height * 0.2, width: 10, height: 40)
+        
         UIView.animateWithDuration(1.5, animations: {
             self.firstRectangle.frame = endFrame
         }) { (next) in
@@ -69,8 +70,8 @@ class HolderView: UIView {
         
     }
     func animateSecondRect(){
-        let endFrame = CGRect(x: frame.width * offset + 14, y: frame.height / 2 - 10, width: 10, height: 40)
-        let nextEndFrame = CGRect(x: frame.width * offset + 14, y: frame.height / 2, width: 10, height: 40)
+        let endFrame = CGRect(x: frame.width * offset + 14, y: frame.height * 0.2 - 10, width: 10, height: 40)
+        let nextEndFrame = CGRect(x: frame.width * offset + 14, y: frame.height * 0.2, width: 10, height: 40)
         
         UIView.animateWithDuration(1.5, animations: {
             self.secondRectangle.frame = endFrame
@@ -82,8 +83,8 @@ class HolderView: UIView {
         }
     }
     func animateThirdRect(){
-        let endFrame = CGRect(x: frame.width * offset + 28, y: frame.height / 2 - 10, width: 10, height: 40)
-        let nextEndFrame = CGRect(x: frame.width * offset + 28, y: frame.height / 2, width: 10, height: 40)
+        let endFrame = CGRect(x: frame.width * offset + 28, y: frame.height * 0.2 - 10, width: 10, height: 40)
+        let nextEndFrame = CGRect(x: frame.width * offset + 28, y: frame.height * 0.2, width: 10, height: 40)
         
         UIView.animateWithDuration(1.5, animations: {
             self.thirdRectangle.frame = endFrame
